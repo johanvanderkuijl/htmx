@@ -1,0 +1,23 @@
+<div class="mb-3">
+    <form 
+
+         
+        method="post">
+            <div class="mb-3">
+                <label for="name" class="form-label">Search</label>
+                <input autofocus class="form-control" id="search" name="search" type="search" autocomplete="off"
+                        hx-post="/search" 
+        hx-target="#users"
+                hx-trigger="input changed delay:50ms, keyup[key=='Enter'], load"
+        hx-indicator=".htmx-indicator"
+         placeholder="Begin typing to search usernames"
+                >
+            </div>
+            <div class="mb-3">
+                <input class="btn btn-primary" type="submit" submit>      
+            </div>
+                                            <div class="htmx-indicator">
+                                    <div class="spinner-border"></div>
+                                </div>
+    </form>
+</div>

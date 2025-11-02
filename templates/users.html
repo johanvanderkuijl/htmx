@@ -1,0 +1,23 @@
+<table id="users" class="table table-sm table-striped">
+      <thead>
+        <tr>
+          <th>id</th>
+          <th>Name</th>
+          <th>Age</th>
+          <th>Hobbies</th>
+          <th>actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for person in persons %}
+        <tr>
+          <td>{{ person.id }}</td>
+          <td>{{ person.name }}</td>
+          <td>{{ person.age }}</td>
+          <td>{{ person.hobbies }}</td>
+          <td><div hx-delete="/users/{{person.id}}" hx-target="closest tr" hx-swap="outerHTML swap:1s" class="btn btn-danger">delete</div></td>
+        </tr>
+        {% endfor %} 
+        
+      </tbody>
+  </table>  
